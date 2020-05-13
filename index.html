@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<head>
+<style type="text/css">
+#dress {
+	position:relative;
+	height: 500px;
+}
+#dress img {
+	position:absolute;
+	left:0;
+	top:0;
+}
+</style>
+<style type="text/css" media="print">
+.print {
+	display: none;
+}
+</style>
+
+<script type="text/javascript">
+	//服の種類選択------------------------------------------------------------------------------------------------------
+	function innerChange(){
+		radio = document.getElementsByName('inner')
+		//服なし
+		if(radio[0].checked) {
+			document.getElementById('innerColorBox01').style.display = "none";
+			document.getElementById('innerColorBox02').style.display = "none";
+			document.getElementById('innerColorBox03').style.display = "none";
+			document.getElementById("inner_message").innerHTML = "インナーを選択";
+			document.getElementById("innerColor_message").innerHTML = "色を選択";
+			document.innerLink.src = "images/none.png";
+		}
+		//タンクトップ
+		else if(radio[1].checked) {
+			document.getElementById('innerColorBox01').style.display = "block";	//タンクトップの色を表示
+			document.getElementById('innerColorBox02').style.display = "none";	//Yシャツの色を非表示
+			document.getElementById('innerColorBox03').style.display = "none";	//七分丈の色を非表示
+			document.getElementById("inner_message").innerHTML = "タンクトップです。";	//服の種類の説明文変更
+			document.getElementById("innerColor_message").innerHTML = "白です。";	//服の色の説明文変更
+			document.innerLink.src = "images/inner_a01.png";	//画像変更
+			document.getElementsByName("innerColor_a")[0].checked = true;	//色のラジオボタンの初期値設定
+		}
+		//Yシャツ
+		else if(radio[2].checked) {
+			document.getElementById('innerColorBox01').style.display = "none";
+			document.getElementById('innerColorBox02').style.display = "block";
+			document.getElementById('innerColorBox03').style.display = "none";
+			document.getElementById("inner_message").innerHTML = "Yシャツです。";
+			document.getElementById("innerColor_message").innerHTML = "白です。";
+			document.innerLink.src = "images/inner_b01.png";
+			document.getElementsByName("innerColor_b")[0].checked = true;
+		}
+		//七分丈
+		else if(radio[3].checked) {
+			document.getElementById('innerColorBox01').style.display = "none";
+			document.getElementById('innerColorBox02').style.display = "none";
+			document.getElementById('innerColorBox03').style.display = "block";
+			document.getElementById("inner_message").innerHTML = "七分丈です。";
+			document.getElementById("innerColor_message").innerHTML = "白です。";
+			document.innerLink.src = "images/inner_c01.png";
+			document.getElementsByName("innerColor_c")[0].checked = true;
+		}
+	}
+
+	//服の色選択------------------------------------------------------------------------------------------------------
+	//タンクトップ
+	function innerColor_a01(){
+		document.innerLink.src = "images/inner_a01.png";
+		document.getElementById("innerColor_message").innerHTML = "白です。";
+	}
+	function innerColor_a02(){
+		document.innerLink.src = "images/inner_a02.png";
+		document.getElementById("innerColor_message").innerHTML = "赤です。";
+	}
+	function innerColor_a03(){
+		document.innerLink.src = "images/inner_a03.png";
+		document.getElementById("innerColor_message").innerHTML = "緑です。";
+	}
+	function innerColor_a04(){
+		document.innerLink.src = "images/inner_a04.png";
+		document.getElementById("innerColor_message").innerHTML = "青です。";
+	}
+	//Yシャツ
+	function innerColor_b01(){
+		document.innerLink.src = "images/inner_b01.png";
+		document.getElementById("innerColor_message").innerHTML = "白です。";
+	}
+	function innerColor_b02(){
+		document.innerLink.src = "images/inner_b02.png";
+		document.getElementById("innerColor_message").innerHTML = "赤です。";
+	}
+	function innerColor_b03(){
+		document.innerLink.src = "images/inner_b03.png";
+		document.getElementById("innerColor_message").innerHTML = "緑です。";
+	}
+	function innerColor_b04(){
+		document.innerLink.src = "images/inner_b04.png";
+		document.getElementById("innerColor_message").innerHTML = "青です。";
+	}
+	//七分丈
+	function innerColor_c01(){
+		document.innerLink.src = "images/inner_c01.png";
+		document.getElementById("innerColor_message").innerHTML = "白です。";
+	}
+	function innerColor_c02(){
+		document.innerLink.src = "images/inner_c02.png";
+		document.getElementById("innerColor_message").innerHTML = "赤です。";
+	}
+	function innerColor_c03(){
+		document.innerLink.src = "images/inner_c03.png";
+		document.getElementById("innerColor_message").innerHTML = "緑です。";
+	}
+	function innerColor_c04(){
+		document.innerLink.src = "images/inner_c04.png";
+		document.getElementById("innerColor_message").innerHTML = "青です。";
+	}
+		//服の種類選択------------------------------------------------------------------------------------------------------
+	function outerChange(){
+		radio = document.getElementsByName('outer')
+		//服なし
+		if(radio[0].checked) {
+			document.getElementById('outerColorBox01').style.display = "none";
+			document.getElementById('outerColorBox02').style.display = "none";
+			document.getElementById('outerColorBox03').style.display = "none";
+			document.getElementById("outer_message").innerHTML = "アウターを選択";
+			document.getElementById("outerColor_message").innerHTML = "色を選択";
+			document.outerLink.src = "images/none.png";
+		}
+		else if(radio[1].checked) {
+			document.getElementById('outerColorBox01').style.display = "block";	//タンクトップの色を表示
+			document.getElementById('outerColorBox02').style.display = "none";	//Yシャツの色を非表示
+			document.getElementById('outerColorBox03').style.display = "none";	//七分丈の色を非表示
+			document.getElementById("outer_message").innerHTML = "パーカーです。";	//服の種類の説明文変更
+			document.getElementById("outerColor_message").innerHTML = "白です。";	//服の色の説明文変更
+			document.outerLink.src = "images/outer_a01.png";	//画像変更
+			document.getElementsByName("outerColor_a")[0].checked = true;	//色のラジオボタンの初期値設定
+		}
+		else if(radio[2].checked) {
+			document.getElementById('outerColorBox01').style.display = "none";
+			document.getElementById('outerColorBox02').style.display = "block";
+			document.getElementById('outerColorBox03').style.display = "none";
+			document.getElementById("outer_message").innerHTML = "コートです。";
+			document.getElementById("outerColor_message").innerHTML = "白です。";
+			document.outerLink.src = "images/outer_b01.png";
+			document.getElementsByName("outerColor_b")[0].checked = true;
+		}
+		else if(radio[3].checked) {
+			document.getElementById('outerColorBox01').style.display = "none";
+			document.getElementById('outerColorBox02').style.display = "none";
+			document.getElementById('outerColorBox03').style.display = "block";
+			document.getElementById("outer_message").innerHTML = "ノースリーブです。";
+			document.getElementById("outerColor_message").innerHTML = "白です。";
+			document.outerLink.src = "images/outer_c01.png";
+			document.getElementsByName("outerColor_c")[0].checked = true;
+		}
+	}
+
+	//服の色選択------------------------------------------------------------------------------------------------------
+	function outerColor_a01(){
+		document.outerLink.src = "images/outer_a01.png";
+		document.getElementById("outerColor_message").innerHTML = "白です。";
+	}
+	function outerColor_a02(){
+		document.outerLink.src = "images/outer_a02.png";
+		document.getElementById("outerColor_message").innerHTML = "赤です。";
+	}
+	function outerColor_a03(){
+		document.outerLink.src = "images/outer_a03.png";
+		document.getElementById("outerColor_message").innerHTML = "緑です。";
+	}
+	function outerColor_a04(){
+		document.outerLink.src = "images/outer_a04.png";
+		document.getElementById("outerColor_message").innerHTML = "青です。";
+	}
+	function outerColor_b01(){
+		document.outerLink.src = "images/outer_b01.png";
+		document.getElementById("outerColor_message").innerHTML = "白です。";
+	}
+	function outerColor_b02(){
+		document.outerLink.src = "images/outer_b02.png";
+		document.getElementById("outerColor_message").innerHTML = "赤です。";
+	}
+	function outerColor_b03(){
+		document.outerLink.src = "images/outer_b03.png";
+		document.getElementById("outerColor_message").innerHTML = "緑です。";
+	}
+	function outerColor_b04(){
+		document.outerLink.src = "images/outer_b04.png";
+		document.getElementById("outerColor_message").innerHTML = "青です。";
+	}
+	function outerColor_c01(){
+		document.outerLink.src = "images/outer_c01.png";
+		document.getElementById("outerColor_message").innerHTML = "白です。";
+	}
+	function outerColor_c02(){
+		document.outerLink.src = "images/outer_c02.png";
+		document.getElementById("outerColor_message").innerHTML = "赤です。";
+	}
+	function outerColor_c03(){
+		document.outerLink.src = "images/outer_c03.png";
+		document.getElementById("outerColor_message").innerHTML = "緑です。";
+	}
+	function outerColor_c04(){
+		document.outerLink.src = "images/outer_c04.png";
+		document.getElementById("outerColor_message").innerHTML = "青です。";
+	}
+</script>
+</head>
+
+<body>
+	<div id="dress">
+		<img src="images/body.gif">
+		<img src="images/none.png" name="innerLink">
+		<img src="images/none.png" name="outerLink">
+	</div>
+
+	<div id="inner_message">インナーを選択</div>
+	<div id="innerColor_message">色を選択</div>
+
+	<div class="print">
+		<p>■服を選択してください。</p>
+		<p>
+			□インナー<br>
+			<input type="radio" name="inner" onClick="innerChange();" checked />なし
+			<input type="radio" name="inner" onClick="innerChange();" />タンクトップ
+			<input type="radio" name="inner" onClick="innerChange();" />Yシャツ
+			<input type="radio" name="inner" onClick="innerChange();" />七分丈
+		</p>
+
+		<!-- 表示非表示切り替え -->
+		<div id="innerColorBox01" style="display:none;">
+			<p class="btn">
+				<input type="radio" name="innerColor_a" onClick="innerColor_a01()" value="画像1">白
+				<input type="radio" name="innerColor_a" onClick="innerColor_a02()" value="画像2">赤
+				<input type="radio" name="innerColor_a" onClick="innerColor_a03()" value="画像3">緑
+				<input type="radio" name="innerColor_a" onClick="innerColor_a04()" value="画像3">青
+			</p>
+		</div>
+		<div id="innerColorBox02" style="display:none;">
+			<p class="btn">
+				<input type="radio" name="innerColor_b" onClick="innerColor_b01()" value="画像1">白
+				<input type="radio" name="innerColor_b" onClick="innerColor_b02()" value="画像2">赤
+				<input type="radio" name="innerColor_b" onClick="innerColor_b03()" value="画像3">緑
+				<input type="radio" name="innerColor_b" onClick="innerColor_b04()" value="画像3">青
+			</p>
+		</div>
+		<div id="innerColorBox03" style="display:none;">
+			<p class="btn">
+				<input type="radio" name="innerColor_c" onClick="innerColor_c01()" value="画像1">白
+				<input type="radio" name="innerColor_c" onClick="innerColor_c02()" value="画像2">赤
+				<input type="radio" name="innerColor_c" onClick="innerColor_c03()" value="画像3">緑
+				<input type="radio" name="innerColor_c" onClick="innerColor_c04()" value="画像3">青
+			</p>
+		</div>
+	</div>
+
+	<div id="outer_message">アウターを選択</div>
+	<div id="outerColor_message">色を選択</div>
+
+	<div class="print">
+		<p>■服を選択してください。</p>
+		<p>
+			□アウター<br>
+			<input type="radio" name="outer" onClick="outerChange();" checked />なし
+			<input type="radio" name="outer" onClick="outerChange();" />パーカー
+			<input type="radio" name="outer" onClick="outerChange();" />コート
+			<input type="radio" name="outer" onClick="outerChange();" />ノースリーブ
+		</p>
+
+		<!-- 表示非表示切り替え -->
+		<div id="outerColorBox01" style="display:none;">
+			<p class="btn">
+				<input type="radio" name="outerColor_a" onClick="outerColor_a01()" value="画像1">白
+				<input type="radio" name="outerColor_a" onClick="outerColor_a02()" value="画像2">赤
+				<input type="radio" name="outerColor_a" onClick="outerColor_a03()" value="画像3">緑
+				<input type="radio" name="outerColor_a" onClick="outerColor_a04()" value="画像3">青
+			</p>
+		</div>
+		<div id="outerColorBox02" style="display:none;">
+			<p class="btn">
+				<input type="radio" name="outerColor_b" onClick="outerColor_b01()" value="画像1">白
+				<input type="radio" name="outerColor_b" onClick="outerColor_b02()" value="画像2">赤
+				<input type="radio" name="outerColor_b" onClick="outerColor_b03()" value="画像3">緑
+				<input type="radio" name="outerColor_b" onClick="outerColor_b04()" value="画像3">青
+			</p>
+		</div>
+		<div id="outerColorBox03" style="display:none;">
+			<p class="btn">
+				<input type="radio" name="outerColor_c" onClick="outerColor_c01()" value="画像1">白
+				<input type="radio" name="outerColor_c" onClick="outerColor_c02()" value="画像2">赤
+				<input type="radio" name="outerColor_c" onClick="outerColor_c03()" value="画像3">緑
+				<input type="radio" name="outerColor_c" onClick="outerColor_c04()" value="画像3">青
+			</p>
+		</div>
+	</div>
+
+	<div class="print">
+		<p><input type="button" value="この結果を印刷する" onclick="window.print();" /></p>
+	</div>
+
+	<p>© 2016 <a href="http://www.dctweb.jp/">DCT</a> inc.</p>
+</body>
+</html>
